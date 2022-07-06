@@ -1,0 +1,123 @@
+/* Mobile & tablet */
+@media (max-width: 1023px){
+    .header{
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 10;
+        width: 100%;
+    }
+    .hide-on-mobile-tablet{
+        display: none;
+    }
+    :root{
+    --header-height: 76px;
+    --navbar-height: 0px;
+    }
+
+    .header__cart-list{
+    position: fixed;
+    top: var(--header-height);
+    right: 0px;
+    width: 100%;
+    padding:0 calc((100% - 644px) / 2);
+    }
+    .header__cart-list::after{
+        display: none;
+    }
+    .app__container{
+        margin-top: calc(var(--header-height) + var(--header-short-bar-height) );
+        height: 100%;
+    }
+    .header__cart-item-remove{
+        background-color: #ccc;
+        min-width: 3vh;
+        min-height: 2vh;
+        line-height: 2vh;
+        text-align: center;
+        border-radius: 2px;
+        color: red;
+    }
+    .header__short-bar{
+        display: flex;
+    }
+    .header__mb-search{
+        display: block;
+    }
+}
+/* tablet */
+@media (min-width: 740px) and (max-width: 1023px){
+    .hide-on-tablet{
+        display: none;
+    }
+    .header__cart{
+        width: 80px;
+        text-align: right;
+    }
+    .header__search-history{
+        z-index:3 ;
+
+    }
+}
+
+/* Mobile */
+@media (max-width: 739px){
+    .hide-on-mobile{
+        display: none;
+    }
+    .header-with-search{
+        display: flex;
+        justify-content: space-between;
+    }
+    .header__logo,
+    .header__cart{
+        width: unset;
+    }
+    .header__search-checkbox:checked ~ .header__search{
+        display: flex;
+    }
+    .header__search{
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        height: 46px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        z-index: 6;
+        padding: 0 10px;
+        animation: mbSearchSideIn linear 0.3s;
+        display: none;
+        width: 100%;
+    }
+    @keyframes mbSearchSideIn {
+        from{
+            opacity: 0;
+            top: calc(var(--header-height) / 2 );
+        }
+        to{
+            opacity: 1;
+            top: var(--header-height);
+        }
+    }
+    .header__search-history{
+        position: fixed;
+        top: var(--header-height) + var(--header-short-bar-height);
+        left: 0;
+        right: 0;
+        width: 100%;
+    }
+    .pagination-item{
+        margin: 0 1px;
+    }
+    .app__content{
+        margin: 0 4px;
+        padding-top: 3px;
+    }
+    .mb-category{
+        display: block;
+    }
+    .footer__content-mb{
+        padding: 0 16px;
+    }
+}
